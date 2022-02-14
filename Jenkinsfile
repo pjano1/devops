@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'tester'
+        label 'jenkin-service'
     }
     stages {
         stage('build') {
