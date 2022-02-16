@@ -1,12 +1,4 @@
-podTemplate(containers: [
-    containerTemplate(
-        name: 'maven', 
-        image: 'maven:3.8.1-jdk-8', 
-        command: 'sleep', 
-        args: '30d'
-        )
-  ],
-
+pipeline {
   volumes: [
   persistentVolumeClaim(
       mountPath: '/root/.m2/repository', 
@@ -16,11 +8,11 @@ podTemplate(containers: [
   ])
  
   {
-    node(POD_LABEL) {
+    stages {
         stage('Get a Maven project') {
             steps {
                 sh 'uname -a'
-                sh 'echo main branch!'
+                sh 'echo Getting maven!'
             }
         }
     }
