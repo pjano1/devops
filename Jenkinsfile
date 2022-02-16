@@ -18,13 +18,15 @@ podTemplate(containers: [
  
   {
     node(POD_LABEL) {
-    stages {
-        stage('build') {
-            steps {
-                sh 'uname -a'
-                sh 'echo main branch!'
-            }
-        }
+	stages {
+        	stage('build') {
+	            steps {
+        	        sh 'uname -a'
+                	sh 'echo main branch!'
+	            }
+        	}
 
-    }
+    	}
+  }
+
   }
