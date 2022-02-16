@@ -5,7 +5,7 @@ pipeline {
       claimName: 'jenkins-pv-claim', 
       readOnly: false
       )
-  ])
+  ]
  
   {
     stages {
