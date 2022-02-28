@@ -1,0 +1,14 @@
+Hi everyone,
+
+I was able to install Docker Desktop and enable Kubernetes without issues. It seems like they are running fine. Also. I installed the Ubuntu distribution on WSL-2, but I noticed kubernetes and the ubuntu distro are using a lot of memory already (around ~5GB). Is there a way to limit the resources for this services? According to documentation, there should be a file under "C:\Users\<UserName>\.wslconfig." to configure the limitis (memory, cpu, swap size), but the file is missing on my Windows machine. Have anyone seen this issue? 
+
+10:28 AM
+You may have to create the file if it is not there. The file I created is pasted below. 
+
+Later in the course you will probably need 6G or more, when we build data pipelines. My understanding (according to https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig😞 WSL2 defaults to "50% of total memory on Windows or 8GB, whichever is less;"
+
+[wsl2]
+
+memory=6GB
+
+swap=0
